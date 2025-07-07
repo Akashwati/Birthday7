@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Swati Cake</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#ffe6f0, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .cake-wrapper {
+      position: relative;
+      width: 220px;
+      height: 300px;
+      cursor: pointer;
+    }
+
+    .tier {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 15px;
+      border: 4px solid #b83e58;
+      background: radial-gradient(circle at center, #fddde6 0%, #f9b3c7 100%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .tier1 {
+      width: 180px;
+      height: 60px;
+      bottom: 0;
+    }
+
+    .tier2 {
+      width: 140px;
+      height: 50px;
+      bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tier3 {
+      width: 100px;
+      height: 40px;
+      bottom: 110px;
+    }
+
+    .tier4 {
+      width: 70px;
+      height: 30px;
+      bottom: 150px;
+    }
+
+    .swati-text {
+      position: absolute;
+      bottom: 65px; /* on top of tier1 */
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22px;
+      color: #b3003b;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .age-text {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 26px;
+      font-weight: bold;
+      color: #b3003b;
+      pointer-events: none;
+    }
+
+    .candle {
+      position: absolute;
+      width: 10px;
+      height: 30px;
+      background: #fff8a6;
+      border-radius: 3px;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .flame {
+      width: 12px;
+      height: 18px;
+      background: radial-gradient(circle, #ffc107, #ff5722);
+      border-radius: 50% 50% 0 0;
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { transform: translateX(-50%) scale(1); }
+      to { transform: translateX(-50%) scale(1.1); }
+    }
+
+    .knife {
+      position: absolute;
+      bottom: 20px;
+      right: -80px;
+      width: 120px;
+      height: 20px;
+      background: linear-gradient(to right, #ccc, #eee);
+      border-radius: 10px;
+      transform: rotate(-20deg);
+      box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    }
+
+    .message {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 18px;
+      color: #800033;
+    }
+
+    .message h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .message small {
+      display: block;
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="cake-wrapper" onclick="cutCake()">
+    <div class="swati-text">Swati</div>
+
+    <div class="tier tier1"></div>
+
+    <div class="tier tier2">
+      <div class="age-text">20</div>
+    </div>
+
+    <div class="tier tier3"></div>
+
+    <div class="tier tier4">
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+    </div>
+
+    <div class="knife"></div>
+  </div>
+
+  <div class="message" id="msg">
+    <h2>Happy Birthday Swati</h2>
+    <h4>4th birthday with me</h4>
+    <p>
+      Happy Birthday 🥺💫<br>
+      Khush raho... hamesha.<br>
+      Har baar tumhare liye dua ki hai,<br>
+      aaj bhi wohi karta hoon.<br>
+      Jo bhi life mein chaho, poora ho.
+    </p>
+    <small>- Akku (Akash)</small>
+  </div>
+
+  <script>
+    function cutCake() {
+      document.querySelector('.cake-wrapper').style.display = 'none';
+      document.getElementById('msg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
